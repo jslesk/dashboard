@@ -8,13 +8,14 @@
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{item.data.name}}</mat-card-title>
-                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
                 </mat-card-header>
 
                 <div class="child"> <img mat-card-image [src]="item.data.img" alt="Photo of a Shiba Inu">
                 </div>
                 <mat-card-content>
-
+                    {{item.data.price}}<span>$</span>
+                    <br>
+                    {{item.data.calories}}<span>cal</span>
 
                 </mat-card-content>
                 <mat-card-actions>
@@ -61,7 +62,15 @@
 
 
 
-
+                    <div class="alert alert-warning">
+                        <span *ngIf="item.data.p">p: {{item.data.p}}<br></span>
+                        <span *ngIf="item.data.hourOfDay">hourOfDay: {{item.data.hourOfDay}}<br></span>
+                        <span *ngIf="item.data.zipCode">zipCode: {{item.data.zipCode}}<br></span>
+                        <span *ngIf="item.data.location">location: {{item.data.location}}<br></span>
+                        <span *ngIf="item.data.flyById">flyById: {{item.data.flyById}}<br></span>
+                        <span *ngIf="item.data.flightDelayRisk">flightDelayRisk:
+                            {{item.data.flightDelayRisk}}<br></span>
+                    </div>
 
 
 
