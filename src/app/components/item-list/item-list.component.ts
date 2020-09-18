@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ItemService } from '../../services/item.service';
-export interface Section {
-  name: string;
-  updated: Date;
+export interface Item {
+  data: any;
+  selectedValue: any;
 }
 
 @Component({
@@ -14,15 +15,29 @@ export class ItemListComponent implements OnInit {
 
   data: any;
 
-  constructor(private itemService: ItemService) { }
+  foods: any[] = [
+    { value: 'regular', viewValue: 'Regular' },
+    { value: 'steak-0', viewValue: 'Steak' },
+    { value: 'pizza-1', viewValue: 'Pizza' },
+    { value: 'tacos-2', viewValue: 'Tacos' }
+  ];
 
+  items: Item[] = [];
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
     this.itemService
       .getAllData()
       .subscribe(data => {
+
         this.data = data;
-        console.log(this.data);
+
+        data.forEach(d => {
+          const item = {} as Item;
+          item.data = d;
+          item.formCtrl = new FormControl();
+          this.items.push(item);
+        });
       });
   }
 }

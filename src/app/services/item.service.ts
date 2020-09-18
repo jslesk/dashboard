@@ -236,7 +236,7 @@ export class ItemService {
 
   constructor() { }
 
-  getAllData(): Observable<any> {
+  getAllData(): Observable<any[]> {
     return of(this.data);
   }
 
