@@ -19,7 +19,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 1,
@@ -34,7 +36,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 2,
@@ -49,7 +53,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 3,
@@ -64,7 +70,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 4,
@@ -79,7 +87,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 5,
@@ -94,7 +104,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 6,
@@ -109,7 +121,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 7,
@@ -124,7 +138,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 8,
@@ -139,7 +155,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 9,
@@ -154,7 +172,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 10,
@@ -169,7 +189,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 11,
@@ -184,7 +206,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     },
     {
       id: 12,
@@ -199,7 +223,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: 3
+      flightDelayRisk: 3,
+      types: [],
+      customize: false
     },
     {
       id: 13,
@@ -214,7 +240,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: 3
+      flightDelayRisk: 3,
+      types: [],
+      customize: false
     },
     {
       id: 14,
@@ -229,7 +257,9 @@ export class ItemService {
       hourOfDay: 8,
       location: 'SFO',
       flyById: '',
-      flightDelayRisk: ''
+      flightDelayRisk: '',
+      types: [],
+      customize: false
     }
   ];
 

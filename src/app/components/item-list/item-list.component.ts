@@ -35,7 +35,6 @@ export class ItemListComponent implements OnInit {
         data.forEach(d => {
           const item = {} as Item;
           item.data = d;
-          item.formCtrl = new FormControl();
           this.items.push(item);
         });
       });
