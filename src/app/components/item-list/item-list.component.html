@@ -4,13 +4,15 @@
 
 
         <div *ngFor="let item of items; let i = index" class="col-sm-6 col-md-4 mt-4">
-            <mat-card class="example-card">
+            <mat-card class="example-card parent">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{item.data.name}}</mat-card-title>
                     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image [src]="item.data.img" alt="Photo of a Shiba Inu">
+
+                <div class="child"> <img mat-card-image [src]="item.data.img" alt="Photo of a Shiba Inu">
+                </div>
                 <mat-card-content>
 
 
@@ -21,9 +23,9 @@
                         <ng-container *ngIf="item.data.types.length">
                             <div class="col-md-7">
                                 <mat-form-field appearance="fill">
-                                    <!-- <mat-label>Type</mat-label> -->
+                                    <mat-label>Type</mat-label>
                                     <mat-select [(ngModel)]="item.selectedValue" name="food">
-                                        <mat-option *ngFor="let food of foods" [value]="food.value" [selected]="1==1">
+                                        <mat-option *ngFor="let food of foods" [value]="food.value">
                                             {{food.viewValue}}
                                         </mat-option>
                                     </mat-select>
@@ -46,7 +48,7 @@
                             </div>
                         </ng-container>
 
-                        <ng-container *ngIf="!item.data.types.length && !item.data.customize">
+                        <ng-container *ngIf=" !item.data.types.length && !item.data.customize">
                             <div class="col-md-12">
                                 <button mat-raised-button color="warn">Add Item</button>
                             </div>
