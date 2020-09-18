@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { ItemService } from '../../services/item.service';
 export interface Item {
   data: any;

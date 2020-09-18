@@ -20,7 +20,16 @@ export class ItemService {
       location: 'SFO',
       flyById: '',
       flightDelayRisk: '',
-      types: [],
+      types: [
+        {
+          id: 0,
+          name: 'Regular',
+        },
+        {
+          id: 1,
+          name: 'Cream',
+        }
+      ],
       customize: false
     },
     {
@@ -37,7 +46,16 @@ export class ItemService {
       location: 'SFO',
       flyById: '',
       flightDelayRisk: '',
-      types: [],
+      types: [
+        {
+          id: 0,
+          name: 'Regular',
+        },
+        {
+          id: 1,
+          name: 'Cream',
+        }
+      ],
       customize: false
     },
     {
@@ -55,7 +73,7 @@ export class ItemService {
       flyById: '',
       flightDelayRisk: '',
       types: [],
-      customize: false
+      customize: true
     },
     {
       id: 3,
@@ -88,8 +106,16 @@ export class ItemService {
       location: 'SFO',
       flyById: '',
       flightDelayRisk: '',
-      types: [],
-      customize: false
+      types: [
+        {
+          id: 0,
+          name: 'Extra ice',
+        },
+        {
+          id: 1,
+          name: 'Fresh Fruit',
+        }
+      ], customize: false
     },
     {
       id: 5,

@@ -17,24 +17,51 @@
                 </mat-card-content>
                 <mat-card-actions>
 
-
                     <div class="row">
-                        <div class="col-md-7">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Favorite food</mat-label>
-                                <mat-select [(ngModel)]="item.selectedValue" name="food">
-                                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                                        {{food.viewValue}}
-                                    </mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                            <p>Selected(debug): {{item.selectedValue}} </p>
-                        </div>
+                        <ng-container *ngIf="item.data.types.length">
+                            <div class="col-md-7">
+                                <mat-form-field appearance="fill">
+                                    <!-- <mat-label>Type</mat-label> -->
+                                    <mat-select [(ngModel)]="item.selectedValue" name="food">
+                                        <mat-option *ngFor="let food of foods" [value]="food.value" [selected]="1==1">
+                                            {{food.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
 
-                        <div class="col-md-5">
-                            <button mat-raised-button color="warn">Add Item</button>
-                        </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <button mat-raised-button color="warn">Add Item</button>
+                            </div>
+                        </ng-container>
+
+                        <ng-container *ngIf="item.data.customize">
+                            <div class="col-md-6">
+                                <button mat-raised-button>Customize</button>
+                            </div>
+
+                            <div class="col-md-6">
+                                <button mat-raised-button color="warn">Add Item</button>
+                            </div>
+                        </ng-container>
+
+                        <ng-container *ngIf="!item.data.types.length && !item.data.customize">
+                            <div class="col-md-12">
+                                <button mat-raised-button color="warn">Add Item</button>
+                            </div>
+                        </ng-container>
+
+
+
                     </div>
+
+
+
+
+
+
+
 
                 </mat-card-actions>
             </mat-card>
