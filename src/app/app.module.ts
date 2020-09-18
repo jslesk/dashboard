@@ -15,7 +15,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
-import { FormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { Search1Component } from './components/search1/search1.component';
+import { Search2Component } from './components/search2/search2.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +31,14 @@ import { FormsModule } from '@angular/forms';
     SearchBarComponent,
     ItemListComponent,
     NavbarComponent,
+    Search1Component,
+    Search2Component,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSliderModule,
     MatToolbarModule,
     MatButtonModule,
@@ -36,6 +47,10 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatCardModule,
     MatRadioModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
