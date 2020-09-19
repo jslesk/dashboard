@@ -289,7 +289,7 @@ export class ItemService {
     }
   ];
 
-  shoppingCart = new BehaviorSubject<any[]>([]);
+  shoppingCart = new BehaviorSubject<Map<number, any>>(new Map());  // key-id, value- data,count
 
   constructor() { }
 
@@ -297,14 +297,39 @@ export class ItemService {
     return of(this.data);
   }
 
-  addToCart(data: any): Observable<any[]> {
-    const includes = this.shoppingCart
-      .getValue()
-      .includes(el => el.id === data.id);
+  addToCart(data: any): Observable<Map<number, any>> {
+    const map = this.shoppingCart.getValue();
 
-    if (!includes) {
-      this.shoppingCart.next([...this.shoppingCart.getValue(), data]);
+    console.log('check:');
+    console.log(map[data.id]);
+
+    if (map[data.id] != null) {
+      console.log('if');
+
+      console.log('before');
+      console.log(map[data.id]);
+
+      map[data.id].count += 1;
+
+      console.log('after');
+      console.log(map[data.id]);
+
+
+      this.shoppingCart.next(map);
+      return of(this.shoppingCart.getValue());
+    } else {
+      console.log('else');
+
+      map[data.id] = {
+        count: 1,
+        data
+      };
+
+      console.log(map[data.id]);
+
+
+      this.shoppingCart.next(map);
+      return of(this.shoppingCart.getValue());
     }
-    return of(this.shoppingCart.getValue());
   }
 }

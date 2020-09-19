@@ -3,7 +3,6 @@
         <mat-icon>menu</mat-icon>
     </button>
     <span>QMiner</span>
-    <span>len: {{shoppingCartItems.length}}</span>
     <span class="example-spacer"></span>
     <a mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button class="example-icon favorite-icon"
         style="margin-right: 2em;">
@@ -13,8 +12,8 @@
     <mat-menu #shoppingCartMenu="matMenu">
         <button *ngIf="shoppingCartItems.length == 0" mat-menu-item style="outline: none">Cart in empty</button>
         <button *ngFor="let item of shoppingCartItems; let i = index" mat-menu-item style="outline: none">
-            <span class="mr-2">2x</span>
-            <span>{{item.name}}</span>
+            <span class="mr-2">{{item?.count}}x</span>
+            <span>{{item?.data?.name}}</span>
         </button>
 
         <!-- <button *ngIf="shoppingCartItems.length" mat-raised-button color="warn" -->
