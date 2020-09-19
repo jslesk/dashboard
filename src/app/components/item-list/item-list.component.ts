@@ -1,5 +1,6 @@
 import { SimpleChanges } from '@angular/core';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ItemService } from '../../services/item.service';
 export interface Item {
   data: any;
@@ -24,7 +25,7 @@ export class ItemListComponent implements OnInit, OnChanges {
 
   items: Item[] = [];
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void { }
 
@@ -42,6 +43,12 @@ export class ItemListComponent implements OnInit, OnChanges {
   addToCart(data: any): void {
     this.itemService
       .addToCart(data)
-      .subscribe();
+      .subscribe(_ => this.openSnackBar(data));
+  }
+
+  private openSnackBar(data: any): void {
+    this._snackBar.open(`'${data.name}' added to Cart`, 'Close', {
+      duration: 2000,
+    });
   }
 }

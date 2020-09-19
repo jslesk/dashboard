@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -54,7 +55,8 @@ import { Search2Component } from './components/search2/search2.component';
     MatInputModule,
     MatGridListModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
