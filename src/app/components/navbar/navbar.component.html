@@ -5,21 +5,15 @@
     <span>QMiner</span>
     <span>len: {{shoppingCartItems.length}}</span>
     <span class="example-spacer"></span>
-    <a *ngIf="shoppingCartItems.length" mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button
-        class="example-icon favorite-icon">
+    <a mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button class="example-icon favorite-icon">
         <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
-        <span class="ml-2" style="font-size:1em">cart</span>
-    </a>
-    <a *ngIf="shoppingCartItems.length == 0" mat-button mat-icon-button class="example-icon favorite-icon">
-        <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
-        <span class="ml-2" style="font-size:1em">cart</span>
+        <span class="ml-2" style="font-size:1em">Cart</span>
     </a>
     <mat-menu #shoppingCartMenu="matMenu">
+        <button *ngIf="shoppingCartItems.length == 0" mat-menu-item style="outline: none">Cart in empty</button>
         <button *ngFor="let item of shoppingCartItems; let i = index" mat-menu-item style="outline: none">
-            <!-- <div mat-card-avatar
-                [ngStyle]="{'background-image': 'url(' + item.data.img + ')', 'background-size': 'cover'  }">
-            </div> -->
-            {{item.name}}
+            <span class="mr-2">2x</span>
+            <span>{{item.name}}</span>
         </button>
     </mat-menu>
 </mat-toolbar>
