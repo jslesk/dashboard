@@ -22,8 +22,28 @@
   <app-item-list [data]="data"></app-item-list>
 
   <div class="d-flex justify-content-center py-4">
-    <button mat-raised-button color="primary" class="mr-2">More Choices</button>
-    <button mat-raised-button color="primary">Check Out</button>
+
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <button mat-raised-button color="primary" class="mr-2">More Choices</button>
+      </div>
+
+      <div class="col-md-12 my-2">
+        <button mat-raised-button color="primary">Check Out</button>
+      </div>
+
+      <div class="col-md-12">
+        <mat-form-field class="example-full-width">
+          <mat-label>Type or speak to search</mat-label>
+          <input matInput>
+          <mat-icon style="font-size: 2em;" matSuffix>mic</mat-icon>
+        </mat-form-field>
+      </div>
+
+    </div>
+
   </div>
 
 </div>

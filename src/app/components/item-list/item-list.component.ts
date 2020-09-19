@@ -1,4 +1,3 @@
-import { SimpleChanges } from '@angular/core';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ItemService } from '../../services/item.service';
@@ -15,6 +14,8 @@ export interface Item {
 export class ItemListComponent implements OnInit, OnChanges {
 
   @Input() data: any;
+
+  enableDebug = false;
 
   foods: any[] = [
     { value: 'regular', viewValue: 'Regular' },

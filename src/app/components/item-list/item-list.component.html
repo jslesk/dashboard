@@ -3,7 +3,7 @@
     <div class="row my-2">
 
 
-        <div *ngFor="let item of items; let i = index" class="col-sm-6 col-md-4 mt-4">
+        <div *ngFor="let item of items; let i = index" class="col-6 col-md-4 mt-4">
             <mat-card class="example-card parent">
                 <mat-card-header>
                     <mat-card-title>{{item.data.name}}</mat-card-title>
@@ -22,7 +22,7 @@
 
                     <div class="row">
                         <ng-container *ngIf="item.data.types.length">
-                            <div class="col-md-7">
+                            <div class="col-12 col-md-7">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Type</mat-label>
                                     <mat-select [(ngModel)]="item.selectedValue" name="food">
@@ -34,7 +34,7 @@
 
                             </div>
 
-                            <div class="col-md-5">
+                            <div class="col-12 col-md-5">
                                 <button (click)="addToCart(item.data)" mat-raised-button color="warn">Add Item</button>
                             </div>
                         </ng-container>
@@ -62,7 +62,7 @@
 
 
 
-                    <div class="alert alert-warning">
+                    <div *ngIf="enableDebug" class="alert alert-warning">
                         <span *ngIf="item.data.p">p: {{item.data.p}}<br></span>
                         <span *ngIf="item.data.hourOfDay">hourOfDay: {{item.data.hourOfDay}}<br></span>
                         <span *ngIf="item.data.zipCode">zipCode: {{item.data.zipCode}}<br></span>
