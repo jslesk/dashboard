@@ -5,9 +5,7 @@
     <span>QMiner</span>
     <span class="example-spacer"></span>
     <a mat-icon-button class="example-icon favorite-icon">
-        <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+        <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
         <span class="ml-2" style="font-size:1em">cart</span>
     </a>
-
-
 </mat-toolbar>

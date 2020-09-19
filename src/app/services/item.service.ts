@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -289,6 +289,7 @@ export class ItemService {
     }
   ];
 
+  shoppingCart = new BehaviorSubject<any[]>([]);
 
   constructor() { }
 
@@ -296,4 +297,14 @@ export class ItemService {
     return of(this.data);
   }
 
+  addToCart(data: any): Observable<any[]> {
+    const includes = this.shoppingCart
+      .getValue()
+      .includes(el => el.id === data.id);
+
+    if (!includes) {
+      this.shoppingCart.next([...this.shoppingCart.getValue(), data]);
+    }
+    return of(this.shoppingCart.getValue());
+  }
 }

@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="col-md-5">
-                                <button mat-raised-button color="warn">Add Item</button>
+                                <button (click)="addToCart(item.data)" mat-raised-button color="warn">Add Item</button>
                             </div>
                         </ng-container>
 
@@ -45,13 +45,13 @@
                             </div>
 
                             <div class="col-md-6">
-                                <button mat-raised-button color="warn">Add Item</button>
+                                <button (click)="addToCart(item.data)" mat-raised-button color="warn">Add Item</button>
                             </div>
                         </ng-container>
 
                         <ng-container *ngIf=" !item.data.types.length && !item.data.customize">
                             <div class="col-md-12">
-                                <button mat-raised-button color="warn">Add Item</button>
+                                <button (click)="addToCart(item.data)" mat-raised-button color="warn">Add Item</button>
                             </div>
                         </ng-container>
 

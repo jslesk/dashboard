@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'qminer';
-
   data: any;
+
+  constructor() { }
 
   setData(data): void {
     this.data = data;

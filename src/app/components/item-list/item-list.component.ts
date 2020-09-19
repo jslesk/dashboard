@@ -23,11 +23,10 @@ export class ItemListComponent implements OnInit, OnChanges {
   ];
 
   items: Item[] = [];
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private itemService: ItemService) { }
 
-  }
+  ngOnInit(): void { }
 
   ngOnChanges(changes: any): void {
     if (changes.data.currentValue) {
@@ -38,5 +37,11 @@ export class ItemListComponent implements OnInit, OnChanges {
         });
       });
     }
+  }
+
+  addToCart(data: any): void {
+    this.itemService
+      .addToCart(data)
+      .subscribe();
   }
 }
