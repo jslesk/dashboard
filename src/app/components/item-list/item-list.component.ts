@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 export interface Item {
   data: any;
@@ -10,9 +11,9 @@ export interface Item {
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.css']
 })
-export class ItemListComponent implements OnInit {
+export class ItemListComponent implements OnInit, OnChanges {
 
-  data: any;
+  @Input() data: any;
 
   foods: any[] = [
     { value: 'regular', viewValue: 'Regular' },
@@ -22,20 +23,20 @@ export class ItemListComponent implements OnInit {
   ];
 
   items: Item[] = [];
-  constructor(private itemService: ItemService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.itemService
-      .getAllData()
-      .subscribe(data => {
 
-        this.data = data;
+  }
 
-        data.forEach(d => {
-          const item = {} as Item;
-          item.data = d;
-          this.items.push(item);
+  ngOnChanges(changes: any): void {
+    if (changes.data.currentValue) {
+      changes.data.currentValue.forEach(el => {
+        this.items.push({
+          data: el,
+          selectedValue: null
         });
       });
+    }
   }
 }

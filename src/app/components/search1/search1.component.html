@@ -32,7 +32,7 @@
 
             <mat-form-field>
                 <mat-label>Hour of day</mat-label>
-                <input matInput type="time" placeholder="Hour of Day">
+                <input matInput type="time" placeholder="Hour of Day" [formControl]="hourOfDayCtrl">
             </mat-form-field>
 
         </div>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="col-md-12">
-            <button mat-raised-button color="primary">Search</button>
+            <button (click)="onSearch()" mat-raised-button color="primary">Search</button>
         </div>
 
     </div>
