@@ -7,3 +7,8 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.sticky-toolbar {
+    position: fixed;
+    z-index: 5;
+}
