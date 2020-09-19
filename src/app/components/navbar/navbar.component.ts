@@ -8,7 +8,7 @@ import { ItemService } from 'src/app/services/item.service';
 })
 export class NavbarComponent implements OnInit {
 
-  shoppingCartItems: any[];
+  shoppingCartItems: any[] = [];
 
   constructor(private itemService: ItemService) {
   }
@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.itemService.shoppingCart.subscribe(items => {
       this.shoppingCartItems = items;
+      console.log(this.shoppingCartItems);
     });
   }
 

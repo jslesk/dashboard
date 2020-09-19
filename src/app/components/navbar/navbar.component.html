@@ -3,9 +3,23 @@
         <mat-icon>menu</mat-icon>
     </button>
     <span>QMiner</span>
+    <span>len: {{shoppingCartItems.length}}</span>
     <span class="example-spacer"></span>
-    <a mat-icon-button class="example-icon favorite-icon">
+    <a *ngIf="shoppingCartItems.length" mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button
+        class="example-icon favorite-icon">
         <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
         <span class="ml-2" style="font-size:1em">cart</span>
     </a>
+    <a *ngIf="shoppingCartItems.length == 0" mat-button mat-icon-button class="example-icon favorite-icon">
+        <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
+        <span class="ml-2" style="font-size:1em">cart</span>
+    </a>
+    <mat-menu #shoppingCartMenu="matMenu">
+        <button *ngFor="let item of shoppingCartItems; let i = index" mat-menu-item style="outline: none">
+            <!-- <div mat-card-avatar
+                [ngStyle]="{'background-image': 'url(' + item.data.img + ')', 'background-size': 'cover'  }">
+            </div> -->
+            {{item.name}}
+        </button>
+    </mat-menu>
 </mat-toolbar>
