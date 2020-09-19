@@ -20,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -53,7 +53,8 @@ import { Search2Component } from './components/search2/search2.component';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
