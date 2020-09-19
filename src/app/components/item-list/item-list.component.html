@@ -4,14 +4,15 @@
 
 
         <div *ngFor="let item of items; let i = index" class="col-6 col-md-4 mt-4">
-            <mat-card class="example-card parent">
+            <mat-card class="example-card ">
                 <mat-card-header>
                     <mat-card-title>{{item.data.name}}</mat-card-title>
 
                 </mat-card-header>
 
-                <div class="child mt-1"> <img mat-card-image [src]="item.data.img" alt="Photo of a Shiba Inu">
-                </div>
+                <!-- <div class="child mt-1"> -->
+                <img mat-card-image [src]="item.data.img">
+                <!-- </div> -->
 
                 <mat-card-content>
                     <h2>{{item.data.price}}<span>$</span></h2>
@@ -59,9 +60,6 @@
 
                     </div>
 
-
-
-
                     <div *ngIf="enableDebug" class="alert alert-warning">
                         <span *ngIf="item.data.p">p: {{item.data.p}}<br></span>
                         <span *ngIf="item.data.hourOfDay">hourOfDay: {{item.data.hourOfDay}}<br></span>
@@ -71,8 +69,6 @@
                         <span *ngIf="item.data.flightDelayRisk">flightDelayRisk:
                             {{item.data.flightDelayRisk}}<br></span>
                     </div>
-
-
 
                 </mat-card-actions>
             </mat-card>
