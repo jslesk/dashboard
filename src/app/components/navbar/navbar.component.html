@@ -5,7 +5,8 @@
     <span>QMiner</span>
     <span>len: {{shoppingCartItems.length}}</span>
     <span class="example-spacer"></span>
-    <a mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button class="example-icon favorite-icon">
+    <a mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button class="example-icon favorite-icon"
+        style="margin-right: 2em;">
         <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
         <span class="ml-2" style="font-size:1em">Cart</span>
     </a>
