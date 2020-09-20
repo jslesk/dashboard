@@ -17,7 +17,7 @@
             <span class="mr-2">{{shoppingCartMap[key]?.count}}x</span>
             <span>{{shoppingCartMap[key]?.data?.name}}</span>
         </button>
-        <button mat-raised-button color="warn"
+        <button [routerLink]="['/checkout']" mat-raised-button color="warn"
             style="outline: none; width:80%; margin: 0 auto; display: block;">Checkout</button>
     </mat-menu>
 </mat-toolbar>
