@@ -1,17 +1,7 @@
 <mat-card>
     <mat-card-content>
 
-        <div class="row">
-
-            <div class="col-md-6">
-                <app-search1 (onDataChange)=setData($event)></app-search1>
-            </div>
-
-            <div class="col-md-6">
-                <app-search2></app-search2>
-            </div>
-
-        </div>
+        <app-search-bar (onDataChange)=setData($event)></app-search-bar>
 
     </mat-card-content>
 </mat-card>
@@ -23,7 +13,7 @@
     <div class="row">
 
         <div class="col-md-12">
-            <button mat-raised-button color="primary" class="mr-2">More Choices</button>
+            <button (click)="loadMore()" mat-raised-button color="primary" class="mr-2">More Choices</button>
         </div>
 
         <div class="col-md-12 my-2">

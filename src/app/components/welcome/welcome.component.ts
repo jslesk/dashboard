@@ -18,4 +18,8 @@ export class WelcomeComponent implements OnInit {
     this.data = data;
   }
 
+  loadMore(): void {
+
+  }
+
 }

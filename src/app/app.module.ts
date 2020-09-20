@@ -26,8 +26,6 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { Search1Component } from './components/search1/search1.component';
-import { Search2Component } from './components/search2/search2.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
@@ -40,8 +38,6 @@ import { AppRoutingModule } from './app-routing.module';
     SearchBarComponent,
     ItemListComponent,
     NavbarComponent,
-    Search1Component,
-    Search2Component,
     CheckoutComponent,
     WelcomeComponent,
   ],
