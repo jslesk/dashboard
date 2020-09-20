@@ -1,49 +1,5 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-
-  <mat-card>
-    <mat-card-content>
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <app-search1 (onDataChange)=setData($event)></app-search1>
-        </div>
-
-        <div class="col-md-6">
-          <app-search2></app-search2>
-        </div>
-
-      </div>
-
-    </mat-card-content>
-  </mat-card>
-  <app-item-list [data]="data"></app-item-list>
-
-  <div class="d-flex justify-content-center py-4">
-
-
-    <div class="row">
-
-      <div class="col-md-12">
-        <button mat-raised-button color="primary" class="mr-2">More Choices</button>
-      </div>
-
-      <div class="col-md-12 my-2">
-        <button mat-raised-button color="primary">Check Out</button>
-      </div>
-
-      <div class="col-md-12">
-        <mat-form-field class="example-full-width">
-          <mat-label>Type or speak to search</mat-label>
-          <input matInput>
-          <mat-icon style="font-size: 2em;" matSuffix>mic</mat-icon>
-        </mat-form-field>
-      </div>
-
-    </div>
-
-  </div>
-
+    <router-outlet></router-outlet>
 </div>

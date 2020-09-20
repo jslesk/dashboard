@@ -28,6 +28,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Search1Component } from './components/search1/search1.component';
 import { Search2Component } from './components/search2/search2.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { RouterModule, Routes } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
+const appRoutes: Routes = [
+  { path: '', component: WelcomeComponent, data: { state: 'welcome' } },
+];
 
 @NgModule({
   declarations: [
@@ -37,6 +45,8 @@ import { Search2Component } from './components/search2/search2.component';
     NavbarComponent,
     Search1Component,
     Search2Component,
+    CheckoutComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,11 @@ import { Search2Component } from './components/search2/search2.component';
     MatSelectModule,
     MatBadgeModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { /*enableTracing: !environment.production*/ } // <-- debugging purposes only
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]
