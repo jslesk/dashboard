@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.example-icon:visited {
+    color: white;
+}
+
 .sticky-toolbar {
     position: sticky;
     z-index: 5;

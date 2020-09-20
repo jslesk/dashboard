@@ -47,6 +47,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -66,7 +67,6 @@ import { AppRoutingModule } from './app-routing.module';
     MatBadgeModule,
     MatSnackBarModule,
     MatMenuModule,
-    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
