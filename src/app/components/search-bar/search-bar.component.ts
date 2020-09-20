@@ -17,21 +17,37 @@ export class SearchBarComponent implements OnInit {
   locationCtrl = new FormControl();
   dayOfWeekCtrl = new FormControl();
   hourOfDayCtrl = new FormControl();
-  flightDelayLevel = new FormControl();
+  flightDelayLevelCtrl = new FormControl();
   demoVersionCtrl = new FormControl();
 
   flyByIdCtrl = new FormControl();
   zipCodeCtrl = new FormControl();
 
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
+  daysOfWeekOptions: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  flightDelayLevelOptions: string[] = ['1', '2', '3'];
+  demoVersionOptions: string[] = ['v1', 'v2', 'v3', 'v4', 'v5'];
+
+  filteredDayOfWeek: Observable<string[]>;
+  filteredDelayLevel: Observable<string[]>;
+  filteredDemoVersion: Observable<string[]>;
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.filteredOptions = this.locationCtrl.valueChanges.pipe(
+
+    this.filteredDayOfWeek = this.dayOfWeekCtrl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value))
+      map(value => this._filter(this.daysOfWeekOptions, value))
+    );
+
+    this.filteredDelayLevel = this.flightDelayLevelCtrl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(this.flightDelayLevelOptions, value))
+    );
+
+    this.filteredDemoVersion = this.demoVersionCtrl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(this.demoVersionOptions, value))
     );
   }
 
@@ -43,9 +59,9 @@ export class SearchBarComponent implements OnInit {
       });
   }
 
-  private _filter(value: string): string[] {
+  private _filter(options: string[], value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+    return options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 }

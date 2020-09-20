@@ -11,9 +11,8 @@
                         <input type="text" placeholder="ex. New York" aria-label="Number" matInput
                             [formControl]="locationCtrl" [matAutocomplete]="auto">
                         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                                {{option}}
-                            </mat-option>
+
+
                         </mat-autocomplete>
                     </mat-form-field>
                 </div>
@@ -22,9 +21,9 @@
                     <mat-form-field>
                         <mat-label>Day of Week</mat-label>
                         <input type="text" placeholder="ex. Friday" aria-label="Number" matInput
-                            [formControl]="dayOfWeekCtrl" [matAutocomplete]="auto">
-                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            [formControl]="dayOfWeekCtrl" [matAutocomplete]="autoDayOfWeek">
+                        <mat-autocomplete autoActiveFirstOption #autoDayOfWeek="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredDayOfWeek | async" [value]="option">
                                 {{option}}
                             </mat-option>
                         </mat-autocomplete>
@@ -44,9 +43,9 @@
                     <mat-form-field>
                         <mat-label>Flight Delay Level</mat-label>
                         <input type="text" placeholder="ex. 3" aria-label="Number" matInput
-                            [formControl]="flightDelayLevel" [matAutocomplete]="auto">
-                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            [formControl]="flightDelayLevelCtrl" [matAutocomplete]="autoFlightDelayLevel">
+                        <mat-autocomplete autoActiveFirstOption #autoFlightDelayLevel="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredDelayLevel | async" [value]="option">
                                 {{option}}
                             </mat-option>
                         </mat-autocomplete>
@@ -57,9 +56,9 @@
                     <mat-form-field>
                         <mat-label>Demo version</mat-label>
                         <input type="text" placeholder="ex. " aria-label="Number" matInput
-                            [formControl]="demoVersionCtrl" [matAutocomplete]="auto">
-                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            [formControl]="demoVersionCtrl" [matAutocomplete]="autoDemoVersion">
+                        <mat-autocomplete autoActiveFirstOption #autoDemoVersion="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredDemoVersion | async" [value]="option">
                                 {{option}}
                             </mat-option>
                         </mat-autocomplete>
