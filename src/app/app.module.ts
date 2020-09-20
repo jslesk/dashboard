@@ -30,12 +30,9 @@ import { Search1Component } from './components/search1/search1.component';
 import { Search2Component } from './components/search2/search2.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { RouterModule, Routes } from '@angular/router';
-import { environment } from 'src/environments/environment';
 
-const appRoutes: Routes = [
-  { path: '', component: WelcomeComponent, data: { state: 'welcome' } },
-];
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -69,10 +66,7 @@ const appRoutes: Routes = [
     MatBadgeModule,
     MatSnackBarModule,
     MatMenuModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { /*enableTracing: !environment.production*/ } // <-- debugging purposes only
-    ),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
