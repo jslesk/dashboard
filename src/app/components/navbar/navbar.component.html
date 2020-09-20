@@ -6,17 +6,16 @@
     <span class="example-spacer"></span>
     <a mat-button [matMenuTriggerFor]="shoppingCartMenu" mat-icon-button class="example-icon favorite-icon"
         style="margin-right: 2em;">
-        <mat-icon [matBadge]="shoppingCartItems.length || 0" matBadgeColor="warn">shopping_cart</mat-icon>
+        <mat-icon [matBadge]="shoppingCartLength || 0" matBadgeColor="warn">shopping_cart</mat-icon>
         <span class="ml-2" style="font-size:1em">Cart</span>
     </a>
-    <mat-menu #shoppingCartMenu="matMenu">
-        <button *ngIf="shoppingCartItems.length == 0" mat-menu-item style="outline: none">Cart in empty</button>
-        <button *ngFor="let item of shoppingCartItems; let i = index" mat-menu-item style="outline: none">
-            <span class="mr-2">{{item?.count}}x</span>
-            <span>{{item?.data?.name}}</span>
-        </button>
 
-        <!-- <button *ngIf="shoppingCartItems.length" mat-raised-button color="warn" -->
+    <mat-menu #shoppingCartMenu="matMenu">
+        <button *ngIf="shoppingCartLength == 0" mat-menu-item style="outline: none">Cart in empty</button>
+        <button *ngFor="let key of Object.keys(shoppingCartMap); let i = index" mat-menu-item style="outline: none">
+            <span class="mr-2">{{shoppingCartMap[key]?.count}}x</span>
+            <span>{{shoppingCartMap[key]?.data?.name}}</span>
+        </button>
         <button mat-raised-button color="warn"
             style="outline: none; width:80%; margin: 0 auto; display: block;">Checkout</button>
     </mat-menu>

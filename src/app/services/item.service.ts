@@ -300,36 +300,17 @@ export class ItemService {
   addToCart(data: any): Observable<Map<number, any>> {
     const map = this.shoppingCart.getValue();
 
-    console.log('check:');
+    map[data.id] = {
+      data,
+      count: ((map[data.id] && map[data.id].count) ? (map[data.id].count + 1) : 1)
+    };
+
+    console.log('==========================');
     console.log(map[data.id]);
+    console.log('==========================');
 
-    if (map[data.id] != null) {
-      console.log('if');
+    this.shoppingCart.next(map);
 
-      console.log('before');
-      console.log(map[data.id]);
-
-      map[data.id].count += 1;
-
-      console.log('after');
-      console.log(map[data.id]);
-
-
-      this.shoppingCart.next(map);
-      return of(this.shoppingCart.getValue());
-    } else {
-      console.log('else');
-
-      map[data.id] = {
-        count: 1,
-        data
-      };
-
-      console.log(map[data.id]);
-
-
-      this.shoppingCart.next(map);
-      return of(this.shoppingCart.getValue());
-    }
+    return of(this.shoppingCart.getValue());
   }
 }
